@@ -5,3 +5,10 @@
 /productEngine/.vs/productEngine/v15
 /productEngine/productEngine/obj
 /productEngine/productEngine/bin/Debug/netcoreapp2.1
+/productEngine/productEngine.data/bin/Debug/netcoreapp2.1
+/productEngine/productEngine.data/obj
+/productEngine/ProductEngine.Models/obj
+/productEngine/ProductEngine.Models/bin/Debug/netcoreapp2.1
+/productEngine/ProductEngine.Services/bin/Debug/netcoreapp2.1
+/productEngine/ProductEngine.Services/obj
+/productEngine/.vs/config
