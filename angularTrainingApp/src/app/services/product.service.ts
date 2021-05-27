@@ -25,4 +25,16 @@ export class ProductService {
       headers:new HttpHeaders({"Access-Control-Allow-Origin":"*"})
     });
   }
+
+  postProduct(product:Product):Observable<Product>{
+    return this._httpClint.post<Product>(`${this._baseUrl}`,product);
+  }
+
+  updateProduct(id:string,product:Product):Observable<Product>{
+    return this._httpClint.put<Product>(`${this._baseUrl}/${id}`,product);
+  }
+
+  deleteProduct(id:string):Observable<any>{
+    return this._httpClint.delete(`${this._baseUrl}/${id}`);
+  }
 }

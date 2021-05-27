@@ -9,6 +9,7 @@ using ProductEngine.Services;
 
 namespace productEngine.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -52,8 +53,18 @@ namespace productEngine.Controllers
 
         // POST: api/Product
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Product Post([FromBody] Product product)
         {
+            try
+            {
+
+                return _productService.Post(product);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         // PUT: api/Product/5

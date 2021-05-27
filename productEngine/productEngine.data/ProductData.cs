@@ -7,13 +7,9 @@ namespace productEngine.data
 {
     public class ProductData
     {
-        private List<Product> _products;
-        public ProductData()
-        {
-            _products = GetDummyData();
-        }
+        private static List<Product> _products = GetDummyData();
 
-        private List<Product> GetDummyData()
+        static private List<Product> GetDummyData()
         {
             _products = new List<Product>();
             _products.Add(new Product()
@@ -49,5 +45,11 @@ namespace productEngine.data
             return _products.Where(p=>p.Id.Equals(id)).SingleOrDefault();
         }
 
+        public Product Post(Product product)
+        {
+            product.Id = Guid.NewGuid().ToString();
+            _products.Add(product);
+            return product;
+        }
     }
 }

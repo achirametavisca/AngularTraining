@@ -23,15 +23,14 @@ namespace ProductEngine.Services
             return product;
         }
 
-        Product Post(Product product)
+        public Product Post(Product product)
         {
-           
-            return product;
+            return _productData.Post(product);
         }
 
         Product Put(Product product)
         {
-            
+         
             return product;
         }
 
