@@ -1,0 +1,11 @@
+.calBtn{
+    height: 50px;
+    width: 50px;
+    background-color: wheat;
+}
+.formulaDiv{
+    height: 50px; width:400px;border: 1px solid grey;
+}
+.mainDiv{
+    height: 300px; width:400px;border: 1px solid grey;
+}

@@ -33,8 +33,6 @@ namespace productEngine.data
             return _products;
         }
 
-
-
         public List<Product> Get()
         {
             return _products;
@@ -42,7 +40,12 @@ namespace productEngine.data
 
         public Product Get(string id)
         {
-            return _products.Where(p=>p.Id.Equals(id)).SingleOrDefault();
+            var product = _products.Where(p => p.Id.Equals(id)).SingleOrDefault();
+            if (product == null)
+            {
+                throw new Exception("Product not found with Id " + id);
+            }
+            return product;
         }
 
         public Product Post(Product product)
@@ -51,5 +54,36 @@ namespace productEngine.data
             _products.Add(product);
             return product;
         }
+
+        public Product Put(string id, Product newProduct)
+        {
+            var oldProduct = _products.Where(p => p.Id.Equals(id)).SingleOrDefault();
+            if (oldProduct != null)
+            {
+                _products.Remove(oldProduct);
+                _products.Add(newProduct);
+            }
+            else
+            {
+                throw new Exception("Product not found with Id " + newProduct.Id);
+            }
+            return newProduct;
+        }
+
+        public bool Delete(string id)
+        {
+            bool successful = false;
+            var product = _products.Where(p => p.Id.Equals(id)).SingleOrDefault();
+            if (product != null)
+            {
+                successful = _products.Remove(product);
+            }
+            else
+            {
+                throw new Exception("Product not found with Id " + id);
+            }
+            return successful;
+        }
+
     }
 }

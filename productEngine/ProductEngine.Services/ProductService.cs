@@ -28,15 +28,14 @@ namespace ProductEngine.Services
             return _productData.Post(product);
         }
 
-        Product Put(Product product)
+        public Product Put(string id, Product product)
         {
-         
-            return product;
+            return _productData.Put(id, product);
         }
 
-        bool Delete(string id)
+        public bool Delete(string id)
         {
-            return false;
+            return _productData.Delete(id);
         }
     }
 }

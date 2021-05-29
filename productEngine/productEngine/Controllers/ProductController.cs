@@ -25,7 +25,6 @@ namespace productEngine.Controllers
         {
             try
             {
-
                 return _productService.Get();
             }
             catch (Exception ex)
@@ -41,7 +40,6 @@ namespace productEngine.Controllers
         {
             try
             {
-
                 return _productService.Get(id);
             }
             catch (Exception ex)
@@ -57,7 +55,6 @@ namespace productEngine.Controllers
         {
             try
             {
-
                 return _productService.Post(product);
             }
             catch (Exception ex)
@@ -69,14 +66,24 @@ namespace productEngine.Controllers
 
         // PUT: api/Product/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public Product Put(string id, [FromBody] Product product)
         {
+            try
+            {
+                return _productService.Put(id, product);
+            }
+            catch (Exception ex) { throw ex; }
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(string id)
         {
+            try
+            {
+                return _productService.Delete(id);
+            }
+            catch (Exception ex) { throw ex; }
         }
     }
 }

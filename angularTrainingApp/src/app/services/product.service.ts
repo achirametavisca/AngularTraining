@@ -20,8 +20,8 @@ export class ProductService {
     });
   }
 
-  getProduct(id:string):Observable<Array<Product>>{
-    return this._httpClint.get<Array<Product>>(`${this._baseUrl}/${id}`,{
+  getProduct(id:string):Observable<Product>{
+    return this._httpClint.get<Product>(`${this._baseUrl}/${id}`,{
       headers:new HttpHeaders({"Access-Control-Allow-Origin":"*"})
     });
   }

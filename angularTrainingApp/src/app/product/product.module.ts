@@ -4,14 +4,17 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
+import { ProductHomeComponent } from './product-home/product-home.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
-  declarations: [ProductsComponent, ProductComponent],
+  declarations: [ProductsComponent, ProductComponent, ProductHomeComponent],
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   exports:[ProductComponent, ProductsComponent]
 })

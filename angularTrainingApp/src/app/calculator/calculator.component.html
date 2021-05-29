@@ -1,0 +1,10 @@
+<div style="width: 400px; border: 1px solid grey;">
+    <div class="formulaDiv">
+        <label >{{expression}}</label>
+        </div>
+    <div class="formulaDiv">{{result}}</div>
+    <div class="mainDiv">
+        <input type="button" [value]="i.value" class="calBtn" *ngFor="let i of calInputs" (click)="inputClicked(i)">
+    </div>
+
+</div>

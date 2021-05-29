@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-bordered table-hover">
     <thead class="thead-dark">
       <tr>
         <th scope="col">ID</th>
@@ -7,17 +7,23 @@
         <th scope="col">Price</th>
         <th scope="col">Model</th>
         <th scope="col">Rating</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">          
+      <tr *ngFor="let product of products" (click)="OnRowSelction(product)">          
         <th scope="row">{{product.id}}</th>
         <td>{{product.name}}</td>
         <td>{{product.description}}</td>
         <td>{{product.price}}</td>
         <td>{{product.model}}</td>
         <td>{{product.averageRatings}}</td>
-      </tr>      
+        <td><button type="button" class="btn btn-danger" (click)="deleteProduct(product.id)" >Delete</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="editProduct(product.id)" >Edit</button></td>
+      </tr>  
+     
     </tbody>
   </table>
   
